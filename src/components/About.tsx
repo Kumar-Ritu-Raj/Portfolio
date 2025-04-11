@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptop, faCode } from '@fortawesome/free-solid-svg-icons';
 import { ActiveProps } from './Navbar';
+import '../styles/About.css';
 
 interface Service {
   icon: any;

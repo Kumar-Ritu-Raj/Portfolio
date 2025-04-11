@@ -1,0 +1,11 @@
+.clients-list.has-scrollbar {
+  display: flex;
+  align-content: space-around;
+  justify-content: center;
+  align-items: center;
+}
+
+.clients-list.has-scrollbar img {
+  width: auto;
+  height: 100%;
+} 
