@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { ActiveProps } from './Navbar';
 import './Contact.scss';
+import emailjs from '@emailjs/browser';
 
 interface FormErrors {
   fullname?: string;
@@ -10,7 +11,7 @@ interface FormErrors {
   message?: string;
 }
 
-const Contact = ({active}: ActiveProps) => {
+const Contact = ({ active }: ActiveProps) => {
   const [formData, setFormData] = useState({
     fullname: '',
     email: '',
@@ -21,30 +22,27 @@ const Contact = ({active}: ActiveProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const validateEmail = (email: string) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  };
+  const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const validateForm = () => {
     const newErrors: FormErrors = {};
-    
-    if (!formData.fullname.trim()) {
-      newErrors.fullname = 'Full name is required';
-    }
-    
+
+    if (!formData.fullname.trim()) newErrors.fullname = 'Full name is required';
+
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
     } else if (!validateEmail(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
     }
-    
+
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required';
     } else if (formData.message.length < 10) {
       newErrors.message = 'Message must be at least 10 characters long';
+    } else if (formData.message.length > 10000) {
+      newErrors.message = 'Message is too long. Please keep it under 10,000 characters';
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -62,21 +60,41 @@ const Contact = ({active}: ActiveProps) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!validateForm()) {
-      return;
-    }
+
+    if (!validateForm()) return;
 
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      const templateParams = {
+        fullname: formData.fullname,
+        email: formData.email,
+        message: formData.message.substring(0, 10000),
+        time: new Date().toLocaleString(),
+      };
+
+      await emailjs.send(
+        'service_qhvyzoo',
+        'template_8w74eag',
+        templateParams,
+        {
+          publicKey: 'XO6S2rjTNIp1NSo1k'
+        }
+      );
+
       setSubmitStatus('success');
       setFormData({ fullname: '', email: '', message: '' });
-    } catch (error) {
-      setSubmitStatus('error');
+    } catch (error: any) {
+      console.error('Error sending email:', error);
+      if (error.status === 413) {
+        setSubmitStatus('error');
+        setErrors({
+          message: 'Message is too long. Please shorten your message and try again.',
+        });
+      } else {
+        setSubmitStatus('error');
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -92,11 +110,13 @@ const Contact = ({active}: ActiveProps) => {
         <figure>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.486274634073!2d73.847772315367!3d18.5204300873986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c06c0e9b1a1b%3A0x1a2b3c4d5e6f7g8h!2sPune%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1697041234567!5m2!1sen!2sin"
-            width="400"
+            width="100%"
             height="300"
             loading="lazy"
             title="Google Maps"
             aria-label="Location map"
+            style={{ border: 0 }}
+            allowFullScreen
           ></iframe>
         </figure>
       </section>
@@ -159,7 +179,7 @@ const Contact = ({active}: ActiveProps) => {
           {errors.message && (
             <span id="message-error" className="error-message">{errors.message}</span>
           )}
-          
+
           <button
             className="form-btn"
             type="submit"
