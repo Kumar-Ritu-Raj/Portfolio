@@ -11,7 +11,12 @@ interface FormErrors {
   message?: string;
 }
 
+  const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY!;
+  const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID!;
+  const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID!;
+
 const Contact = ({ active }: ActiveProps) => {
+
   const [formData, setFormData] = useState({
     fullname: '',
     email: '',
@@ -49,10 +54,7 @@ const Contact = ({ active }: ActiveProps) => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value,
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
     }
@@ -74,27 +76,24 @@ const Contact = ({ active }: ActiveProps) => {
         time: new Date().toLocaleString(),
       };
 
-      await emailjs.send(
-        'service_qhvyzoo',
-        'template_8w74eag',
-        templateParams,
-        {
-          publicKey: 'XO6S2rjTNIp1NSo1k'
-        }
-      );
+await emailjs.send(
+  SERVICE_ID,
+  TEMPLATE_ID,
+  templateParams,
+  PUBLIC_KEY
+);
+
 
       setSubmitStatus('success');
       setFormData({ fullname: '', email: '', message: '' });
     } catch (error: any) {
       console.error('Error sending email:', error);
       if (error.status === 413) {
-        setSubmitStatus('error');
         setErrors({
           message: 'Message is too long. Please shorten your message and try again.',
         });
-      } else {
-        setSubmitStatus('error');
       }
+      setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
@@ -148,9 +147,7 @@ const Contact = ({ active }: ActiveProps) => {
               aria-invalid={!!errors.fullname}
               aria-describedby={errors.fullname ? 'fullname-error' : undefined}
             />
-            {errors.fullname && (
-              <span id="fullname-error" className="error-message">{errors.fullname}</span>
-            )}
+            {errors.fullname && <span id="fullname-error" className="error-message">{errors.fullname}</span>}
 
             <input
               type="email"
@@ -162,9 +159,7 @@ const Contact = ({ active }: ActiveProps) => {
               aria-invalid={!!errors.email}
               aria-describedby={errors.email ? 'email-error' : undefined}
             />
-            {errors.email && (
-              <span id="email-error" className="error-message">{errors.email}</span>
-            )}
+            {errors.email && <span id="email-error" className="error-message">{errors.email}</span>}
           </div>
 
           <textarea
@@ -176,9 +171,7 @@ const Contact = ({ active }: ActiveProps) => {
             aria-invalid={!!errors.message}
             aria-describedby={errors.message ? 'message-error' : undefined}
           ></textarea>
-          {errors.message && (
-            <span id="message-error" className="error-message">{errors.message}</span>
-          )}
+          {errors.message && <span id="message-error" className="error-message">{errors.message}</span>}
 
           <button
             className="form-btn"
