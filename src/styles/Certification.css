@@ -1,0 +1,89 @@
+.filter-select-box {
+  position: relative;
+  width: 100%;
+  margin: 0 auto 2rem;
+  display: none;
+  z-index: 50;
+}
+
+@media (max-width: 768px) {
+  .filter-select-box {
+    display: block;
+  }
+
+  .filter-list {
+    display: none;
+  }
+}
+
+.filter-select {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.select-value {
+  font-size: 1.4rem;
+}
+
+.select-icon {
+  display: flex;
+  align-items: center;
+}
+
+.chevron-down {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.select-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0;
+  margin-top: 0.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.select-list.active {
+  max-height: 260px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.select-item {
+  padding: 0.1rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.select-item:hover {
+  background-color: var(--hover-color);
+}
+
+.select-item button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  cursor: pointer;
+}

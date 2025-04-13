@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ActiveProps } from './Navbar';
+import '../styles/Certification.css';
 
 interface Project {
   title: string;
   category: string;
-  date: string,
-  organisation: string,
+  date: string;
+  organisation: string;
   imageUrl: string;
   altText: string;
 }
 
-const Certification = ({active}:ActiveProps) => {
-
+const Certification = ({ active }: ActiveProps) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [isSelectOpen, setIsSelectOpen] = useState<boolean>(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const categories = ['All', 'Web development', 'Data Science', 'Others'];
 
   const projects: Project[] = [
     {
@@ -101,15 +105,34 @@ const Certification = ({active}:ActiveProps) => {
     ? projects
     : projects.filter((project) => project.category === selectedCategory);
 
+  const handleSelectClick = () => {
+    setIsSelectOpen(!isSelectOpen);
+  };
+
+  const handleCategorySelect = (category: string) => {
+    setSelectedCategory(category);
+    setIsSelectOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsSelectOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
-    <article className={active ? "Certification active": "Certification"} data-page="Certification">
+    <article className={active ? "Certification active" : "Certification"} data-page="Certification">
       <header>
         <h2 className="h2 article-title">Certification</h2>
       </header>
 
       <section className="projects">
         <ul className="filter-list">
-          {['All', 'Web development',  'Data Science', 'Others'].map((category) => (
+          {categories.map((category) => (
             <li className="filter-item" key={category}>
               <button
                 className={selectedCategory === category ? 'active' : ''}
@@ -122,21 +145,17 @@ const Certification = ({active}:ActiveProps) => {
           ))}
         </ul>
 
-        <div className="filter-select-box">
-          <button className="filter-select" data-select>
-            <div className="select-value" data-selecct-value>
-              Select category
-            </div>
+        <div className="filter-select-box" ref={dropdownRef}>
+          <button className="filter-select" onClick={handleSelectClick}>
+            <div className="select-value">{selectedCategory}</div>
             <div className="select-icon">
+              <span className="chevron-down">▼</span>
             </div>
           </button>
-          <ul className="select-list">
-            {['All', 'Web development',  'Data Science', 'Others'].map((category) => (
+          <ul className={`select-list ${isSelectOpen ? 'active' : ''}`}>
+            {categories.map((category) => (
               <li className="select-item" key={category}>
-                <button
-                  onClick={() => setSelectedCategory(category)}
-                  data-select-item
-                >
+                <button onClick={() => handleCategorySelect(category)}>
                   {category}
                 </button>
               </li>
@@ -146,12 +165,7 @@ const Certification = ({active}:ActiveProps) => {
 
         <ul className="project-list">
           {filteredProjects.map((project) => (
-            <li
-              className="project-item active"
-              key={project.title}
-              data-filter-item
-              data-category={project.category}
-            >
+            <li className="project-item active" key={project.title}>
               <button className="certification-item-button">
                 <figure className="project-img">
                   <div className="project-item-icon-box">
