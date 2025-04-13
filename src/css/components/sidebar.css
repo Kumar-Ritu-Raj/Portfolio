@@ -1,7 +1,3 @@
-/*-----------------------------------*\
-  #SIDEBAR
-\*-----------------------------------*/
-
 .sidebar {
   background: var(--eerie-black-2);
   border: 1px solid var(--jet);
@@ -15,7 +11,9 @@
   transition: var(--transition-2);
 }
 
-.sidebar.active { max-height: 405px; }
+.sidebar.active {
+  max-height: 405px;
+}
 
 .sidebar-info {
   position: relative;
@@ -63,7 +61,7 @@
 }
 
 .info_more-btn::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 1px;
   border-radius: inherit;
@@ -73,12 +71,18 @@
 }
 
 .info_more-btn:hover,
-.info_more-btn:focus { background: var(--bg-gradient-yellow-1); }
+.info_more-btn:focus {
+  background: var(--bg-gradient-yellow-1);
+}
 
 .info_more-btn:hover::before,
-.info_more-btn:focus::before { background: var(--bg-gradient-yellow-2); }
+.info_more-btn:focus::before {
+  background: var(--bg-gradient-yellow-2);
+}
 
-.info_more-btn span { display: none; }
+.info_more-btn span {
+  display: none;
+}
 
 .sidebar-info_more {
   opacity: 0;
@@ -123,4 +127,6 @@
   font-size: 18px;
 }
 
-.social-item .social-link:hover { color: var(--light-gray); } 
+.social-item .social-link:hover {
+  color: var(--light-gray);
+}

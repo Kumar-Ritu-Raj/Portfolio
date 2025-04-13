@@ -1,8 +1,6 @@
-/*-----------------------------------*\
-  #ABOUT
-\*-----------------------------------*/
-
-.about .article-title { margin-bottom: 15px; }
+.about .article-title {
+  margin-bottom: 15px;
+}
 
 .about-text {
   color: var(--light-gray);
@@ -11,4 +9,6 @@
   line-height: 1.6;
 }
 
-.about-text p { margin-bottom: 15px; } 
+.about-text p {
+  margin-bottom: 15px;
+}

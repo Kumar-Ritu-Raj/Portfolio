@@ -1,20 +1,9 @@
-/*-----------------------------------*\
-  #MAIN CSS
-\*-----------------------------------*/
-
-/**
- * copyright 2022 @codewithsadee
- */
-
-/* Base */
 @import './base/reset.css';
 @import './base/variables.css';
 @import './base/typography.css';
 
-/* Layout */
 @import './layout/main.css';
 
-/* Components */
 @import './components/sidebar.css';
 @import './components/navbar.css';
 @import './components/about.css';
@@ -24,4 +13,4 @@
 @import './components/resume.css';
 @import './components/certification.css';
 @import './components/project.css';
-@import './components/contact.css'; 
+@import './components/contact.css';

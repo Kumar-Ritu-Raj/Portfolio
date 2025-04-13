@@ -1,11 +1,10 @@
-/*-----------------------------------*\
-  #RESUME
-\*-----------------------------------*/
+.article-title {
+  margin-bottom: 30px;
+}
 
-.article-title { margin-bottom: 30px; }
-
-/* Education and Experience */
-.timeline { margin-bottom: 30px; }
+.timeline {
+  margin-bottom: 30px;
+}
 
 .timeline .title-wrapper {
   display: flex;
@@ -19,9 +18,13 @@
   margin-left: 45px;
 }
 
-.timeline-item { position: relative; }
+.timeline-item {
+  position: relative;
+}
 
-.timeline-item:not(:last-child) { margin-bottom: 20px; }
+.timeline-item:not(:last-child) {
+  margin-bottom: 20px;
+}
 
 .timeline-item-title {
   font-size: var(--fs-6);
@@ -36,7 +39,7 @@
 }
 
 .timeline-item:not(:last-child)::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -25px;
   left: -30px;
@@ -46,7 +49,7 @@
 }
 
 .timeline-item::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 5px;
   left: -33px;
@@ -63,12 +66,17 @@
   line-height: 1.6;
 }
 
-/* Skills */
-.skills-title { margin-bottom: 20px; }
+.skills-title {
+  margin-bottom: 20px;
+}
 
-.skills-list { padding: 20px; }
+.skills-list {
+  padding: 20px;
+}
 
-.skills-item:not(:last-child) { margin-bottom: 15px; }
+.skills-item:not(:last-child) {
+  margin-bottom: 15px;
+}
 
 .skill .title-wrapper {
   display: flex;
@@ -94,4 +102,4 @@
   background: var(--text-gradient-yellow);
   height: 100%;
   border-radius: inherit;
-} 
+}

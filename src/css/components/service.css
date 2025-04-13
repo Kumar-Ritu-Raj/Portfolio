@@ -1,10 +1,10 @@
-/*-----------------------------------*\
-  #SERVICE
-\*-----------------------------------*/
+.service {
+  margin-bottom: 35px;
+}
 
-.service { margin-bottom: 35px; }
-
-.service-title { margin-bottom: 20px; }
+.service-title {
+  margin-bottom: 20px;
+}
 
 .service-list {
   display: grid;
@@ -22,7 +22,7 @@
 }
 
 .service-item::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 1px;
   background: var(--bg-gradient-jet);
@@ -30,17 +30,25 @@
   z-index: -1;
 }
 
-.service-icon-box { margin-bottom: 10px; }
+.service-icon-box {
+  margin-bottom: 10px;
+}
 
-.service-icon-box img { margin: auto; }
+.service-icon-box img {
+  margin: auto;
+}
 
-.service-content-box { text-align: center; }
+.service-content-box {
+  text-align: center;
+}
 
-.service-item-title { margin-bottom: 7px; }
+.service-item-title {
+  margin-bottom: 7px;
+}
 
 .service-item-text {
   color: var(--light-gray);
   font-size: var(--fs-6);
   font-weight: var(--fw-3);
   line-height: 1.6;
-} 
+}

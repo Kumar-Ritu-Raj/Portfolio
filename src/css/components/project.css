@@ -1,8 +1,6 @@
-/*-----------------------------------*\
-  #PROJECT
-\*-----------------------------------*/
-
-.project-posts { margin-bottom: 10px; }
+.project-posts {
+  margin-bottom: 10px;
+}
 
 .project-posts-list {
   display: grid;
@@ -20,7 +18,7 @@
 }
 
 .project-post-item > a::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 1px;
   border-radius: inherit;
@@ -42,9 +40,13 @@
   transition: var(--transition-1);
 }
 
-.project-post-item > a:hover .project-banner-box img { transform: scale(1.1); }
+.project-post-item > a:hover .project-banner-box img {
+  transform: scale(1.1);
+}
 
-.project-content { padding: 15px; }
+.project-content {
+  padding: 15px;
+}
 
 .project-meta {
   display: flex;
@@ -73,11 +75,13 @@
   transition: var(--transition-1);
 }
 
-.project-post-item > a:hover .project-item-title { color: var(--orange-yellow-crayola); }
+.project-post-item > a:hover .project-item-title {
+  color: var(--orange-yellow-crayola);
+}
 
 .project-text {
   color: var(--light-gray);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
-} 
+}
