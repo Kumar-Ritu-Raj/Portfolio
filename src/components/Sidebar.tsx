@@ -14,7 +14,7 @@ const Sidebar = () => {
     <aside className={showContacts ? "sidebar active" : "sidebar"} data-sidebar>
       <div className="sidebar-info">
         <figure className="avatar-box">
-          <img src="https://media.licdn.com/dms/image/v2/D4D03AQEvv3H9V_LZHA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1681136111391?e=1737590400&v=beta&t=PKsefu3OKEir3wF1iBXwUoOh3QcpXHzV6_HUj_BNJ90" alt="Kumar Ritu Raj" width="80" />
+          <img src={process.env.PUBLIC_URL + "/kumar.jpg"} alt="Kumar Ritu Raj" width="80" />
         </figure>
 
         <div className="info-content">
