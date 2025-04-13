@@ -13,7 +13,7 @@ const Sidebar = () => {
   return (
     <aside className={showContacts ? "sidebar active" : "sidebar"} data-sidebar>
       <div className="sidebar-info">
-        <figure className="avatar-box">
+        <figure className="avatar-box" id="profile-pic">
           <img src={process.env.PUBLIC_URL + "/kumar.jpg"} alt="Kumar Ritu Raj" width="80" />
         </figure>
 
