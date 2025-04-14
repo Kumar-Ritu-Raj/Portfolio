@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { ActiveProps } from './Navbar';
-import './Contact.scss';
+import '../styles/Contact.css';
 import emailjs from '@emailjs/browser';
 
 interface FormErrors {
