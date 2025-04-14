@@ -121,7 +121,7 @@
   overflow: hidden;
 }
 
-  .testimonials-modal {
+.testimonials-modal {
   background: var(--eerie-black-2);
   position: relative;
   padding: 15px;
@@ -139,7 +139,6 @@
   transform: scale(1);
   opacity: 1;
 }
-
 
 .clients-list.has-scrollbar {
   display: flex;
@@ -186,9 +185,8 @@
   filter: grayscale(0);
 }
 
-
-@media (min-width: 580px){
-    .about .article-title {
+@media (min-width: 580px) {
+  .about .article-title {
     margin-bottom: 20px;
   }
 
@@ -196,7 +194,7 @@
     margin-bottom: 40px;
   }
 
-    .testimonials-title {
+  .testimonials-title {
     margin-bottom: 25px;
   }
 

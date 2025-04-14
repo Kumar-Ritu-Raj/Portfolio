@@ -1,7 +1,15 @@
 :root {
-  --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
+  --bg-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(240, 1%, 25%) 3%,
+    hsl(0, 0%, 19%) 97%
+  );
   --bg-gradient-jet:
-    linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100%),
+    linear-gradient(
+      to bottom right,
+      hsla(240, 1%, 18%, 0.251) 0%,
+      hsla(240, 2%, 11%, 0) 100%
+    ),
     hsl(240, 2%, 13%);
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right,
@@ -9,14 +17,22 @@
     hsla(36, 100%, 69%, 0) 50%
   );
   --bg-gradient-yellow-2:
-    linear-gradient(135deg, hsla(45, 100%, 71%, 0.251) 0%, hsla(35, 100%, 68%, 0) 59.86%),
+    linear-gradient(
+      135deg,
+      hsla(45, 100%, 71%, 0.251) 0%,
+      hsla(35, 100%, 68%, 0) 59.86%
+    ),
     hsl(240, 2%, 13%);
   --border-gradient-onyx: linear-gradient(
     to bottom right,
     hsl(0, 0%, 25%) 0%,
     hsla(0, 0%, 25%, 0) 50%
   );
-  --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+  --text-gradient-yellow: linear-gradient(
+    to right,
+    hsl(45, 100%, 72%),
+    hsl(35, 100%, 68%)
+  );
 
   --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
@@ -489,7 +505,6 @@ main {
   pointer-events: all;
 }
 
-
 .modal-close-btn {
   position: absolute;
   top: 15px;
@@ -544,7 +559,6 @@ main {
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
-
 
 .article-title {
   margin-bottom: 30px;
@@ -1055,10 +1069,10 @@ main {
     flex-direction: column;
     align-items: center;
   }
-    .modal-container {
+  .modal-container {
     padding: 20px;
   }
-  
+
   .content-card {
     padding: 30px;
     padding-top: 25px;

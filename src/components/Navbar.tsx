@@ -6,7 +6,7 @@ import Project from './Project.tsx';
 import Certification from './Certification.tsx';
 
 export interface ActiveProps {
-  active: boolean
+  active: boolean;
 }
 
 const Navbar: React.FC = () => {
@@ -39,13 +39,13 @@ const Navbar: React.FC = () => {
       case 'About':
         return <About active={activeLink === 'About'} />;
       case 'Resume':
-        return <Resume active={activeLink === 'Resume'}/>;
+        return <Resume active={activeLink === 'Resume'} />;
       case 'Certification':
-        return <Certification active={activeLink === 'Certification'}/>;
+        return <Certification active={activeLink === 'Certification'} />;
       case 'Project':
-        return <Project active={activeLink === 'Project'}/>;
+        return <Project active={activeLink === 'Project'} />;
       case 'Contact':
-        return <Contact active={activeLink === 'Contact'}/>;
+        return <Contact active={activeLink === 'Contact'} />;
       default:
         return null;
     }
