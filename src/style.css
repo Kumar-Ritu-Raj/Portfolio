@@ -142,34 +142,6 @@ article {
   margin: 16px 0;
 }
 
-.icon-box {
-  position: relative;
-  background: var(--border-gradient-onyx);
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  color: var(--orange-yellow-crayola);
-  box-shadow: var(--shadow-1);
-  z-index: 1;
-}
-
-.icon-box::before {
-  content: '';
-  position: absolute;
-  inset: 1px;
-  background: var(--eerie-black-1);
-  border-radius: inherit;
-  z-index: -1;
-}
-
-.icon-box ion-icon {
-  --ionicon-stroke-width: 35px;
-}
-
 article {
   display: none;
 }
@@ -247,26 +219,6 @@ article.active {
 
 .has-scrollbar::-webkit-scrollbar-button {
   width: 20px;
-}
-
-.content-card {
-  position: relative;
-  background: var(--border-gradient-onyx);
-  padding: 15px;
-  padding-top: 45px;
-  border-radius: 14px;
-  box-shadow: var(--shadow-2);
-  cursor: pointer;
-  z-index: 1;
-}
-
-.content-card::before {
-  content: '';
-  position: absolute;
-  inset: 1px;
-  background: var(--bg-gradient-jet);
-  border-radius: inherit;
-  z-index: -1;
 }
 
 main {
@@ -522,44 +474,6 @@ main {
   margin-bottom: 30px;
 }
 
-.skills-title {
-  margin-bottom: 20px;
-}
-
-.skills-list {
-  padding: 20px;
-}
-
-.skills-item:not(:last-child) {
-  margin-bottom: 15px;
-}
-
-.skill .title-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 8px;
-}
-
-.skill .title-wrapper data {
-  color: var(--light-gray);
-  font-size: var(--fs-7);
-  font-weight: var(--fw-300);
-}
-
-.skill-progress-bg {
-  background: var(--jet);
-  width: 100%;
-  height: 8px;
-  border-radius: 10px;
-}
-
-.skill-progress-fill {
-  background: var(--text-gradient-yellow);
-  height: 100%;
-  border-radius: inherit;
-}
-
 .filter-list {
   display: none;
 }
@@ -667,13 +581,6 @@ main {
     height: 5px;
   }
 
-  .icon-box {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    font-size: 18px;
-  }
-
   main {
     margin-top: 60px;
     margin-bottom: 100px;
@@ -763,11 +670,6 @@ main {
     padding: 20px;
   }
 
-  .content-card {
-    padding: 30px;
-    padding-top: 25px;
-  }
-
   .modal-avatar-box {
     border-radius: 18px;
     margin-bottom: 0;
@@ -792,10 +694,6 @@ main {
 
   .clients-item {
     min-width: calc(33.33% - 35px);
-  }
-
-  .skills-item:not(:last-child) {
-    margin-bottom: 25px;
   }
 }
 
@@ -1001,9 +899,5 @@ main {
 
   .social-list {
     justify-content: center;
-  }
-
-  .timeline-text {
-    max-width: 700px;
   }
 }

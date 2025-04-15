@@ -81,11 +81,11 @@ export const resumeData: ResumeData = {
     },
   ],
   skills: [
-    { name: 'React', percentage: 80 },
-    { name: 'HTML', percentage: 90 },
-    { name: 'CSS / Tailwind CSS', percentage: 90 },
-    { name: 'Java Script', percentage: 85 },
-    { name: 'Type Script', percentage: 85 },
+    { name: 'React.js and Next.js', percentage: 80 },
+    { name: 'HTML and MJML', percentage: 90 },
+    { name: 'CSS, SCSS and Tailwind CSS', percentage: 90 },
+    { name: 'Java Script and Type Script', percentage: 85 },
+    { name: 'Jest', percentage: 60 },
   ],
 };
 
