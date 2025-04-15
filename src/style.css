@@ -1,54 +1,51 @@
 :root {
   --bg-gradient-onyx: linear-gradient(
     to bottom right,
-    hsl(240, 1%, 25%) 3%,
-    hsl(0, 0%, 19%) 97%
+    hsl(240deg 1% 25%) 3%,
+    hsl(0deg 0% 19%) 97%
   );
   --bg-gradient-jet:
     linear-gradient(
       to bottom right,
-      hsla(240, 1%, 18%, 0.251) 0%,
-      hsla(240, 2%, 11%, 0) 100%
+      hsl(240deg 1% 18% / 25.1%) 0%,
+      hsl(240deg 2% 11% / 0%) 100%
     ),
-    hsl(240, 2%, 13%);
+    hsl(240deg 2% 13%);
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right,
-    hsl(45, 100%, 71%) 0%,
-    hsla(36, 100%, 69%, 0) 50%
+    hsl(45deg 100% 71%) 0%,
+    hsl(36deg 100% 69% / 0%) 50%
   );
   --bg-gradient-yellow-2:
     linear-gradient(
       135deg,
-      hsla(45, 100%, 71%, 0.251) 0%,
-      hsla(35, 100%, 68%, 0) 59.86%
+      hsl(45deg 100% 71% / 25.1%) 0%,
+      hsl(35deg 100% 68% / 0%) 59.86%
     ),
-    hsl(240, 2%, 13%);
+    hsl(240deg 2% 13%);
   --border-gradient-onyx: linear-gradient(
     to bottom right,
-    hsl(0, 0%, 25%) 0%,
-    hsla(0, 0%, 25%, 0) 50%
+    hsl(0deg 0% 25%) 0%,
+    hsl(0deg 0% 25% / 0%) 50%
   );
   --text-gradient-yellow: linear-gradient(
     to right,
-    hsl(45, 100%, 72%),
-    hsl(35, 100%, 68%)
+    hsl(45deg 100% 72%),
+    hsl(35deg 100% 68%)
   );
-
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
-
+  --jet: hsl(0deg 0% 22%);
+  --onyx: hsl(240deg 1% 17%);
+  --eerie-black-1: hsl(240deg 2% 13%);
+  --eerie-black-2: hsl(240deg 2% 12%);
+  --smoky-black: hsl(0deg 0% 7%);
+  --white-1: hsl(0deg 0% 100%);
+  --white-2: hsl(0deg 0% 98%);
+  --orange-yellow-crayola: hsl(45deg 100% 72%);
+  --vegas-gold: hsl(45deg 54% 58%);
+  --light-gray: hsl(0deg 0% 84%);
+  --light-gray-70: hsl(0deg 0% 84% / 70%);
+  --bittersweet-shimmer: hsl(0deg 43% 51%);
   --ff-poppins: 'Poppins', sans-serif;
-
   --fs-1: 24px;
   --fs-2: 18px;
   --fs-3: 17px;
@@ -57,18 +54,15 @@
   --fs-6: 14px;
   --fs-7: 13px;
   --fs-8: 11px;
-
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
-
-  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
-  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
-  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
-  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
-  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
-
+  --shadow-1: -4px 8px 24px hsl(0deg 0% 0% / 25%);
+  --shadow-2: 0 16px 30px hsl(0deg 0% 0% / 25%);
+  --shadow-3: 0 16px 40px hsl(0deg 0% 0% / 25%);
+  --shadow-4: 0 25px 50px hsl(0deg 0% 0% / 15%);
+  --shadow-5: 0 24px 80px hsl(0deg 0% 0% / 25%);
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
 }
@@ -189,6 +183,7 @@ article.active {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -423,43 +418,6 @@ main {
   color: var(--light-gray);
 }
 
-.navbar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--jet);
-  border-radius: 12px 12px 0 0;
-  box-shadow: var(--shadow-2);
-  z-index: 500;
-}
-
-.navbar-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 0 10px;
-}
-
-.navbar-link {
-  color: var(--light-gray);
-  font-size: var(--fs-8);
-  padding: 20px 7px;
-  transition: color var(--transition-1);
-}
-
-.navbar-link:hover,
-.navbar-link:focus {
-  color: var(--light-gray-70);
-}
-
-.navbar-link.active {
-  color: var(--orange-yellow-crayola);
-}
-
 .modal-container {
   position: fixed;
   top: 0;
@@ -491,7 +449,7 @@ main {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: hsl(0, 0%, 5%);
+  background: hsl(0deg 0% 5%);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -726,7 +684,7 @@ main {
 }
 
 .select-item button:hover {
-  --eerie-black-2: hsl(240, 2%, 20%);
+  --eerie-black-2: hsl(240deg 2% 20%);
 }
 
 .project-list {
@@ -749,6 +707,7 @@ main {
   0% {
     transform: scale(0.5);
   }
+
   100% {
     transform: scale(1);
   }
@@ -780,7 +739,7 @@ main {
 }
 
 .project-item > a:hover .project-img::before {
-  background: hsla(0, 0%, 0%, 0.5);
+  background: hsl(0deg 0% 0% / 50%);
 }
 
 .project-item-icon-box {
@@ -802,6 +761,7 @@ main {
 
 .project-item > a:hover .project-item-icon-box {
   --scale: 1;
+
   opacity: 1;
 }
 
@@ -927,7 +887,7 @@ main {
   line-height: 1.6;
 }
 
-@media (min-width: 450px) {
+@media (width >= 450px) {
   .clients-item {
     min-width: calc(33.33% - 10px);
   }
@@ -938,7 +898,7 @@ main {
   }
 }
 
-@media (min-width: 580px) {
+@media (width >= 580px) {
   :root {
     --fs-1: 32px;
     --fs-2: 24px;
@@ -1035,18 +995,6 @@ main {
     width: calc(100% - 64px);
   }
 
-  .navbar {
-    border-radius: 20px 20px 0 0;
-  }
-
-  .navbar-list {
-    gap: 20px;
-  }
-
-  .navbar-link {
-    --fs-8: 14px;
-  }
-
   .service-item {
     display: flex;
     justify-content: flex-start;
@@ -1069,6 +1017,7 @@ main {
     flex-direction: column;
     align-items: center;
   }
+
   .modal-container {
     padding: 20px;
   }
@@ -1136,7 +1085,7 @@ main {
   }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .sidebar,
   article {
     width: 700px;
@@ -1149,10 +1098,6 @@ main {
   .contacts-list {
     grid-template-columns: 1fr 1fr;
     gap: 30px 15px;
-  }
-
-  .navbar-link {
-    --fs-8: 15px;
   }
 
   .testimonials-modal {
@@ -1201,11 +1146,11 @@ main {
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   :root {
-    --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
-    --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
-    --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
+    --shadow-1: -4px 8px 24px hsl(0deg 0% 0% / 12.5%);
+    --shadow-2: 0 16px 30px hsl(0deg 0% 0% / 12.5%);
+    --shadow-3: 0 16px 40px hsl(0deg 0% 0% / 12.5%);
   }
 
   .sidebar,
@@ -1222,27 +1167,6 @@ main {
     position: relative;
     width: max-content;
     margin: auto;
-  }
-
-  .navbar {
-    position: absolute;
-    bottom: auto;
-    top: 0;
-    left: auto;
-    right: 0;
-    width: max-content;
-    border-radius: 0 20px;
-    padding: 0 20px;
-    box-shadow: none;
-  }
-
-  .navbar-list {
-    gap: 30px;
-    padding: 0 20px;
-  }
-
-  .navbar-link {
-    font-weight: var(--fw-500);
   }
 
   .service-list {
@@ -1267,7 +1191,7 @@ main {
   }
 }
 
-@media (min-width: 1250px) {
+@media (width >= 1250px) {
   body::-webkit-scrollbar {
     width: 20px;
   }
@@ -1278,15 +1202,15 @@ main {
 
   body::-webkit-scrollbar-thumb {
     border: 5px solid var(--smoky-black);
-    background: hsla(0, 0%, 100%, 0.1);
+    background: hsl(0deg 0% 100% / 10%);
     border-radius: 20px;
     box-shadow:
-      inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
-      inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+      inset 1px 1px 0 hsl(0deg 0% 100% / 11%),
+      inset -1px -1px 0 hsl(0deg 0% 100% / 11%);
   }
 
   body::-webkit-scrollbar-thumb:hover {
-    background: hsla(0, 0%, 100%, 0.15);
+    background: hsl(0deg 0% 100% / 15%);
   }
 
   body::-webkit-scrollbar-button {
@@ -1365,6 +1289,7 @@ main {
 
   .contact-info :is(.contact-link, time, address) {
     --fs-7: 14px;
+
     font-weight: var(--fw-300);
   }
 

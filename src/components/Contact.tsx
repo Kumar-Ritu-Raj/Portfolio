@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { ActiveProps } from './Navbar';
-import '../styles/Contact.css';
 import emailjs from '@emailjs/browser';
+import '../styles/Contact.css';
 
 interface FormErrors {
   fullname?: string;

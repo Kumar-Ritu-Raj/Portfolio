@@ -4,6 +4,7 @@ import Contact from './Contact.tsx';
 import Resume from './Resume.tsx';
 import Project from './Project.tsx';
 import Certification from './Certification.tsx';
+import '../styles/Navbar.css';
 
 export interface ActiveProps {
   active: boolean;
