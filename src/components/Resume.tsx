@@ -2,6 +2,7 @@ import React from 'react';
 import { ActiveProps } from './Navbar';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../styles/Resume.css';
 
 export interface Education {
   school: string;
