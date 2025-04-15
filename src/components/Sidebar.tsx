@@ -13,6 +13,7 @@ import {
   faGithub,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
+import '../styles/Sidebar.css';
 
 const Sidebar = () => {
   const [showContacts, setShowContacts] = useState(true);
@@ -55,7 +56,10 @@ const Sidebar = () => {
               </div>
               <div className="contact-info">
                 <p className="contact-title">Email</p>
-                <a href="mailto:omtestmail@gmail.com" className="contact-link">
+                <a
+                  href="mailto:kumarrituraj2000@gmail.com"
+                  className="contact-link"
+                >
                   kumarrituraj2000@gmail.com
                 </a>
               </div>
@@ -67,7 +71,7 @@ const Sidebar = () => {
               </div>
               <div className="contact-info">
                 <p className="contact-title">Phone</p>
-                <a href="tel:+12133522795" className="contact-link">
+                <a href="tel:+918935802137" className="contact-link">
                   +91 8935802137
                 </a>
               </div>
@@ -79,7 +83,7 @@ const Sidebar = () => {
               </div>
               <div className="contact-info">
                 <p className="contact-title">Birthday</p>
-                <time dateTime="2003-03-02">5 January, 2000</time>
+                <time dateTime="2000-01-05">5 January, 2000</time>
               </div>
             </li>
 
