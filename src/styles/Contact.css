@@ -34,7 +34,7 @@
   margin-bottom: 30px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width <= 768px) {
   .contact-form .input-wrapper {
     grid-template-columns: 1fr;
     gap: 25px;
@@ -65,8 +65,8 @@
 }
 
 .contact-form .form-input.error {
-  border-color: #ff4444;
-  background-color: rgba(255, 68, 68, 0.1);
+  border-color: #f44;
+  background-color: rgb(255 68 68 / 10%);
 }
 
 .contact-form textarea.form-input {
@@ -82,7 +82,7 @@
 }
 
 .contact-form .error-message {
-  color: #ff4444;
+  color: #f44;
   font-size: 0.875rem;
   margin-top: 0.25rem;
   display: block;
@@ -96,15 +96,15 @@
 }
 
 .contact-form .alert.alert-success {
-  background-color: rgba(76, 175, 80, 0.1);
+  background-color: rgb(76 175 80 / 10%);
   color: #2e7d32;
   border: 1px solid #2e7d32;
 }
 
 .contact-form .alert.alert-error {
-  background-color: rgba(255, 68, 68, 0.1);
-  color: #ff4444;
-  border: 1px solid #ff4444;
+  background-color: rgb(255 68 68 / 10%);
+  color: #f44;
+  border: 1px solid #f44;
 }
 
 .contact-form .form-btn {
@@ -165,6 +165,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -176,7 +177,7 @@
   margin-bottom: 20px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width <= 768px) {
   .contact-header {
     font-size: var(--fs-6);
   }

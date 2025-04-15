@@ -142,8 +142,7 @@
 
 .clients-list.has-scrollbar {
   display: flex;
-  align-content: space-around;
-  justify-content: center;
+  place-content: space-around center;
   align-items: center;
 }
 
@@ -151,6 +150,7 @@
   width: auto;
   height: 100%;
 }
+
 .clients {
   margin-bottom: 15px;
 }
@@ -185,7 +185,7 @@
   filter: grayscale(0);
 }
 
-@media (min-width: 580px) {
+@media (width >= 580px) {
   .about .article-title {
     margin-bottom: 20px;
   }
@@ -204,6 +204,7 @@
     padding: 30px;
     padding-bottom: 35px;
   }
+
   .testimonials-avatar-box {
     transform: translate(30px, -30px);
     border-radius: 20px;
