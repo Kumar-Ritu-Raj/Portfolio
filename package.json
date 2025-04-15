@@ -26,10 +26,10 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "format:check": "prettier --check .",
-    "format:fix": "prettier --write .",
-    "lint:css": "stylelint '**/*.{css,scss}'",
-    "lint:css:fix": "stylelint '**/*.{css,scss}' --fix"
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "stylelint:css": "stylelint '**/*.{css,scss}'",
+    "stylelint:css:fix": "stylelint '**/*.{css,scss}' --fix"
   },
   "eslintConfig": {
     "extends": [

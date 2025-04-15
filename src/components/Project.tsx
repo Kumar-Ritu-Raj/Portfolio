@@ -1,5 +1,6 @@
 import React from 'react';
 import { ActiveProps } from './Navbar';
+import '../styles/Project.css';
 
 interface projectPost {
   id: number;
