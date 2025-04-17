@@ -120,25 +120,6 @@
   overflow: hidden;
 }
 
-.testimonials-modal {
-  background: var(--eerie-black-2);
-  position: relative;
-  padding: 15px;
-  margin: 15px 12px;
-  border: 1px solid var(--jet);
-  border-radius: 14px;
-  box-shadow: var(--shadow-5);
-  transform: scale(1.2);
-  opacity: 0;
-  transition: var(--transition-1);
-  z-index: 2;
-}
-
-.modal-container.active .testimonials-modal {
-  transform: scale(1);
-  opacity: 1;
-}
-
 .clients-list.has-scrollbar {
   display: flex;
   place-content: space-around center;
@@ -184,6 +165,25 @@
   filter: grayscale(0);
 }
 
+.has-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+  background: var(--onyx);
+  border-radius: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--orange-yellow-crayola);
+  border-radius: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button {
+  width: 20px;
+}
+
 @media (width >= 580px) {
   .about .article-title {
     margin-bottom: 20px;
@@ -222,23 +222,10 @@
     line-clamp: 2;
     -webkit-line-clamp: 2;
   }
+}
 
-  .modal-container {
-    padding: 20px;
-  }
-
-  .testimonials-modal {
-    display: flex;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 25px;
-    padding: 30px;
-    border-radius: 20px;
-  }
-
-  .modal-img-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@media (width >= 768px) {
+  .has-scrollbar::-webkit-scrollbar-button {
+    width: 100px;
   }
 }
