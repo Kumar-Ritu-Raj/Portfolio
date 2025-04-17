@@ -152,6 +152,10 @@
   font-style: normal;
 }
 
+#profile-pic img {
+  border-radius: 50%;
+}
+
 @media (width >= 580px) {
   .contact-info {
     max-width: calc(100% - 64px);
