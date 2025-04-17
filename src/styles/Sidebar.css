@@ -156,6 +156,11 @@
   border-radius: 50%;
 }
 
+.avatar-box {
+  background: var(--bg-gradient-onyx);
+  border-radius: 20px;
+}
+
 @media (width >= 580px) {
   .contact-info {
     max-width: calc(100% - 64px);
@@ -210,6 +215,14 @@
 
   .separator {
     margin: 32px 0;
+  }
+
+  .avatar-box {
+    border-radius: 30px;
+  }
+
+  .avatar-box img {
+    width: 120px;
   }
 }
 
@@ -292,5 +305,9 @@
 
   .social-list {
     justify-content: center;
+  }
+
+  .avatar-box img {
+    width: 150px;
   }
 }
