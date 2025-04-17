@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { ActiveProps } from './Navbar';
-import './Contact.scss';
 import emailjs from '@emailjs/browser';
+import '../styles/Contact.css';
 
 interface FormErrors {
   fullname?: string;
@@ -11,12 +11,11 @@ interface FormErrors {
   message?: string;
 }
 
-  const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY!;
-  const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID!;
-  const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID!;
+const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY!;
+const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID!;
+const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID!;
 
 const Contact = ({ active }: ActiveProps) => {
-
   const [formData, setFormData] = useState({
     fullname: '',
     email: '',
@@ -25,9 +24,12 @@ const Contact = ({ active }: ActiveProps) => {
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<
+    'idle' | 'success' | 'error'
+  >('idle');
 
-  const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const validateEmail = (email: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const validateForm = () => {
     const newErrors: FormErrors = {};
@@ -45,18 +47,21 @@ const Contact = ({ active }: ActiveProps) => {
     } else if (formData.message.length < 10) {
       newErrors.message = 'Message must be at least 10 characters long';
     } else if (formData.message.length > 10000) {
-      newErrors.message = 'Message is too long. Please keep it under 10,000 characters';
+      newErrors.message =
+        'Message is too long. Please keep it under 10,000 characters';
     }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name as keyof FormErrors]) {
-      setErrors(prev => ({ ...prev, [name]: undefined }));
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
   };
 
@@ -76,13 +81,7 @@ const Contact = ({ active }: ActiveProps) => {
         time: new Date().toLocaleString(),
       };
 
-await emailjs.send(
-  SERVICE_ID,
-  TEMPLATE_ID,
-  templateParams,
-  PUBLIC_KEY
-);
-
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
 
       setSubmitStatus('success');
       setFormData({ fullname: '', email: '', message: '' });
@@ -90,7 +89,8 @@ await emailjs.send(
       console.error('Error sending email:', error);
       if (error.status === 413) {
         setErrors({
-          message: 'Message is too long. Please shorten your message and try again.',
+          message:
+            'Message is too long. Please shorten your message and try again.',
         });
       }
       setSubmitStatus('error');
@@ -100,7 +100,10 @@ await emailjs.send(
   };
 
   return (
-    <article className={active ? "contact active" : "contact"} data-page="contact">
+    <article
+      className={active ? 'contact active' : 'contact'}
+      data-page="contact"
+    >
       <header>
         <h2 className="h2 article-title">Contact</h2>
       </header>
@@ -147,7 +150,11 @@ await emailjs.send(
               aria-invalid={!!errors.fullname}
               aria-describedby={errors.fullname ? 'fullname-error' : undefined}
             />
-            {errors.fullname && <span id="fullname-error" className="error-message">{errors.fullname}</span>}
+            {errors.fullname && (
+              <span id="fullname-error" className="error-message">
+                {errors.fullname}
+              </span>
+            )}
 
             <input
               type="email"
@@ -159,7 +166,11 @@ await emailjs.send(
               aria-invalid={!!errors.email}
               aria-describedby={errors.email ? 'email-error' : undefined}
             />
-            {errors.email && <span id="email-error" className="error-message">{errors.email}</span>}
+            {errors.email && (
+              <span id="email-error" className="error-message">
+                {errors.email}
+              </span>
+            )}
           </div>
 
           <textarea
@@ -171,7 +182,11 @@ await emailjs.send(
             aria-invalid={!!errors.message}
             aria-describedby={errors.message ? 'message-error' : undefined}
           ></textarea>
-          {errors.message && <span id="message-error" className="error-message">{errors.message}</span>}
+          {errors.message && (
+            <span id="message-error" className="error-message">
+              {errors.message}
+            </span>
+          )}
 
           <button
             className="form-btn"

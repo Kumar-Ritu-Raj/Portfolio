@@ -4,9 +4,10 @@ import Contact from './Contact.tsx';
 import Resume from './Resume.tsx';
 import Project from './Project.tsx';
 import Certification from './Certification.tsx';
+import '../styles/Navbar.css';
 
 export interface ActiveProps {
-  active: boolean
+  active: boolean;
 }
 
 const Navbar: React.FC = () => {
@@ -18,7 +19,6 @@ const Navbar: React.FC = () => {
     setActiveLink(link);
   };
 
-  // Handle keyboard navigation
   const handleKeyDown = (e: React.KeyboardEvent, link: string) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
@@ -26,26 +26,18 @@ const Navbar: React.FC = () => {
     }
   };
 
-  // Focus management
-  useEffect(() => {
-    const activeElement = document.querySelector('.navbar-link.active');
-    if (activeElement) {
-      (activeElement as HTMLElement).focus();
-    }
-  }, [activeLink]);
-
   const renderComponent = () => {
     switch (activeLink) {
       case 'About':
         return <About active={activeLink === 'About'} />;
       case 'Resume':
-        return <Resume active={activeLink === 'Resume'}/>;
+        return <Resume active={activeLink === 'Resume'} />;
       case 'Certification':
-        return <Certification active={activeLink === 'Certification'}/>;
+        return <Certification active={activeLink === 'Certification'} />;
       case 'Project':
-        return <Project active={activeLink === 'Project'}/>;
+        return <Project active={activeLink === 'Project'} />;
       case 'Contact':
-        return <Contact active={activeLink === 'Contact'}/>;
+        return <Contact active={activeLink === 'Contact'} />;
       default:
         return null;
     }

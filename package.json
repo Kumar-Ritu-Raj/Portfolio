@@ -25,7 +25,11 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "stylelint:css": "stylelint '**/*.{css,scss}'",
+    "stylelint:css:fix": "stylelint '**/*.{css,scss}' --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +49,10 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "prettier": "^3.5.3",
+    "stylelint": "^16.18.0",
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-config-standard-scss": "^14.0.0"
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { ActiveProps } from './Navbar';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../styles/Resume.css';
 
 export interface Education {
   school: string;
@@ -33,64 +34,66 @@ export interface ResumeData {
 export const resumeData: ResumeData = {
   education: [
     {
-      school: "Lovely Professional University, Punjab",
-      startYear: "2021",
-      endYear: "2023",
-      description: "Master of Computer Application",
-      marks: "CGPA: 7.97",
+      school: 'Lovely Professional University, Punjab',
+      startYear: '2021',
+      endYear: '2023',
+      description: 'Master of Computer Application',
+      marks: 'CGPA: 7.97',
     },
     {
-      school: "BNMU, Bihar",
-      startYear: "2017",
-      endYear: "2020",
-      description: "Bachelor of Computer Application",
-      marks: "Percentage: 80.17%",
+      school: 'BNMU, Bihar',
+      startYear: '2017',
+      endYear: '2020',
+      description: 'Bachelor of Computer Application',
+      marks: 'Percentage: 80.17%',
     },
     {
-      school: "Adarsh Inter College, Bihar",
-      startYear: "2014",
-      endYear: "2016",
-      description: "Intermediate",
-      marks: "Percentage: 63.00%",
+      school: 'Adarsh Inter College, Bihar',
+      startYear: '2014',
+      endYear: '2016',
+      description: 'Intermediate',
+      marks: 'Percentage: 63.00%',
     },
     {
-      school: "Gandhi High School Jamin Murhan Hat",
-      startYear: "2013",
-      endYear: "2014",
-      description: "Matriculation",
-        marks: "Percentage: 76.40%",
+      school: 'Gandhi High School Jamin Murhan Hat',
+      startYear: '2013',
+      endYear: '2014',
+      description: 'Matriculation',
+      marks: 'Percentage: 76.40%',
     },
   ],
   experience: [
     {
-      position: "Front-End Developer",
-      company: "Parkar Digital",
-      startYear: "April 2023",
-      endYear: "Present",
-      description: "Work on two projects Atkco and Steel-Buy in Parkar Digital as a React Developer.",
+      position: 'Front-End Developer',
+      company: 'Parkar Digital',
+      startYear: 'April 2023',
+      endYear: 'Present',
+      description:
+        'Work on two projects Atkco and Steel-Buy in Parkar Digital as a React Developer.',
     },
     {
-      position: "Project Manager in Localization",
-      company: "Mozilla Localization",
-      startYear: "February 2018",
-      endYear: "Present",
-      description: "Works at Mozilla as a Manager of the Angika language on pontoon.mozilla.org.",
+      position: 'Project Manager in Localization',
+      company: 'Mozilla Localization',
+      startYear: 'February 2018',
+      endYear: 'Present',
+      description:
+        'Works at Mozilla as a Manager of the Angika language on pontoon.mozilla.org.',
     },
   ],
   skills: [
-    { name: "React", percentage: 80 },
-    { name: "HTML", percentage: 90 },
-    { name: "CSS / Tailwind CSS", percentage: 90 },
-    { name: "Java Script", percentage: 85 },
-    { name: "Type Script", percentage: 85 },
+    { name: 'React.js and Next.js', percentage: 80 },
+    { name: 'HTML and MJML', percentage: 90 },
+    { name: 'CSS, SCSS and Tailwind CSS', percentage: 90 },
+    { name: 'Java Script and Type Script', percentage: 85 },
+    { name: 'Jest', percentage: 60 },
   ],
 };
 
-const Resume = ({active}:ActiveProps) => {
+const Resume = ({ active }: ActiveProps) => {
   const { education, experience, skills } = resumeData;
 
   return (
-    <article className={active ? "resume active": "resume"} data-page="resume">
+    <article className={active ? 'resume active' : 'resume'} data-page="resume">
       <header>
         <h2 className="h2 article-title">Resume</h2>
       </header>
@@ -107,7 +110,9 @@ const Resume = ({active}:ActiveProps) => {
           {experience.map((item, index) => (
             <li key={index} className="timeline-item">
               <h4 className="h4 timeline-item-title">{item.position}</h4>
-              <span>{item.startYear} — {item.endYear}</span>
+              <span>
+                {item.startYear} — {item.endYear}
+              </span>
               <p className="timeline-text">{item.description}</p>
             </li>
           ))}
@@ -126,7 +131,9 @@ const Resume = ({active}:ActiveProps) => {
           {education.map((item, index) => (
             <li key={index} className="timeline-item">
               <h4 className="h4 timeline-item-title">{item.school}</h4>
-              <span>{item.startYear} — {item.endYear}</span>
+              <span>
+                {item.startYear} — {item.endYear}
+              </span>
               <p className="timeline-text">{item.description}</p>
               <p className="timeline-text">{item.marks}</p>
             </li>
