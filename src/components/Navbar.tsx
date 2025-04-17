@@ -19,21 +19,12 @@ const Navbar: React.FC = () => {
     setActiveLink(link);
   };
 
-  // Handle keyboard navigation
   const handleKeyDown = (e: React.KeyboardEvent, link: string) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       handleLinkClick(link);
     }
   };
-
-  // Focus management
-  useEffect(() => {
-    const activeElement = document.querySelector('.navbar-link.active');
-    if (activeElement) {
-      (activeElement as HTMLElement).focus();
-    }
-  }, [activeLink]);
 
   const renderComponent = () => {
     switch (activeLink) {
