@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import About from './About.tsx';
 import Contact from './Contact.tsx';
 import Resume from './Resume.tsx';
 import Project from './Project.tsx';
 import Certification from './Certification.tsx';
+import Achievement from './Achievement.tsx';
 import '../styles/Navbar.css';
 
 export interface ActiveProps {
@@ -13,7 +14,14 @@ export interface ActiveProps {
 const Navbar: React.FC = () => {
   const [activeLink, setActiveLink] = useState<string>('About');
 
-  const navLinks = ['About', 'Resume', 'Certification', 'Project', 'Contact'];
+  const navLinks = [
+    'About',
+    'Resume',
+    'Achievement',
+    'Certification',
+    'Project',
+    'Contact',
+  ];
 
   const handleLinkClick = (link: string) => {
     setActiveLink(link);
@@ -34,6 +42,8 @@ const Navbar: React.FC = () => {
         return <Resume active={activeLink === 'Resume'} />;
       case 'Certification':
         return <Certification active={activeLink === 'Certification'} />;
+      case 'Achievement':
+        return <Achievement active={activeLink === 'Achievement'} />;
       case 'Project':
         return <Project active={activeLink === 'Project'} />;
       case 'Contact':

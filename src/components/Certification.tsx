@@ -70,7 +70,7 @@ const Certification = ({ active }: ActiveProps) => {
       date: 'December, 2022',
       organisation: 'LinkedIn',
       imageUrl:
-        'https://media.licdn.com/dms/image/v2/C4D1FAQGvIUCwP5HVjg/feedshare-document-cover-images_1280/feedshare-document-cover-images_1280/0/1672222949772?e=1744963200&v=beta&t=98rFgkl9ejxG1BVMqjBzPz0vO7aHr_tDOd-AVJvQo7c',
+        'https://media.licdn.com/dms/image/v2/C4D1FAQGvIUCwP5HVjg/feedshare-document-cover-images_1280/feedshare-document-cover-images_1280/0/1672222949772?e=1746262800&v=beta&t=Uf8jW-VuFK1HXIcgrdUt2n2V8Li_iQ1pZoYanZ_SLgM',
       altText: 'Data Science',
     },
     {
