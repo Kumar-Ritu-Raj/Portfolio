@@ -1,50 +1,34 @@
 :root {
-  --bg-gradient-onyx: linear-gradient(
-    to bottom right,
-    hsl(240deg 1% 25%) 3%,
-    hsl(0deg 0% 19%) 97%
-  );
-  --bg-gradient-jet:
-    linear-gradient(
-      to bottom right,
-      hsl(240deg 1% 18% / 25.1%) 0%,
-      hsl(240deg 2% 11% / 0%) 100%
-    ),
-    hsl(240deg 2% 13%);
-  --bg-gradient-yellow-1: linear-gradient(
-    to bottom right,
-    hsl(45deg 100% 71%) 0%,
-    hsl(36deg 100% 69% / 0%) 50%
-  );
-  --bg-gradient-yellow-2:
-    linear-gradient(
-      135deg,
-      hsl(45deg 100% 71% / 25.1%) 0%,
-      hsl(35deg 100% 68% / 0%) 59.86%
-    ),
-    hsl(240deg 2% 13%);
-  --border-gradient-onyx: linear-gradient(
-    to bottom right,
-    hsl(0deg 0% 25%) 0%,
-    hsl(0deg 0% 25% / 0%) 50%
-  );
-  --text-gradient-yellow: linear-gradient(
-    to right,
-    hsl(45deg 100% 72%),
-    hsl(35deg 100% 68%)
-  );
-  --jet: hsl(0deg 0% 22%);
-  --onyx: hsl(240deg 1% 17%);
-  --eerie-black-1: hsl(240deg 2% 13%);
-  --eerie-black-2: hsl(240deg 2% 12%);
-  --smoky-black: hsl(0deg 0% 7%);
-  --white-1: hsl(0deg 0% 100%);
-  --white-2: hsl(0deg 0% 98%);
-  --orange-yellow-crayola: hsl(45deg 100% 72%);
-  --vegas-gold: hsl(45deg 54% 58%);
-  --light-gray: hsl(0deg 0% 84%);
-  --light-gray-70: hsl(0deg 0% 84% / 70%);
-  --bittersweet-shimmer: hsl(0deg 43% 51%);
+  /* Base colors */
+  /* --smoky-black --jet */
+  --dark-blue: #001219;
+
+  /* --white-1 --white-2 */
+  --white: #ffffff;
+
+  /* --bg-gradient-jet --eerie-black-1 --onyx */
+  --dark-teal: #005f73;
+
+  /*  --eerie-black-2 --border-gradient-onyx */
+  --medium-teal: #0a9396;
+
+  /* --bg-gradient-onyx */
+  --light-teal: #94d2bd;
+
+  /* --light-gray --light-gray-70 */
+  --beige: #e9d8a6;
+
+  /* --orange-yellow-crayola --text-gradient-yellow --vegas-gold --bg-gradient-yellow-1 --bg-gradient-yellow-2 --bittersweet-shimmer */
+  --burgundy: #9b2226;
+
+  /* Gradients */
+
+  --orange: #ee9b00;
+  --dark-orange: #ca6702;
+  --rust: #bb3e03;
+  --dark-rust: #ae2012;
+
+
   --ff-poppins: 'Poppins', sans-serif;
   --fs-1: 24px;
   --fs-2: 18px;
@@ -58,11 +42,6 @@
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
-  --shadow-1: -4px 8px 24px hsl(0deg 0% 0% / 25%);
-  --shadow-2: 0 16px 30px hsl(0deg 0% 0% / 25%);
-  --shadow-3: 0 16px 40px hsl(0deg 0% 0% / 25%);
-  --shadow-4: 0 25px 50px hsl(0deg 0% 0% / 15%);
-  --shadow-5: 0 24px 80px hsl(0deg 0% 0% / 25%);
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
 }
@@ -110,7 +89,7 @@ textarea {
 
 ::selection {
   background: var(--orange-yellow-crayola);
-  color: var(--smoky-black);
+  color: var(--dark-blue);
 }
 
 :focus {
@@ -122,12 +101,12 @@ html {
 }
 
 body {
-  background: var(--smoky-black);
+  background: var(--dark-blue);
 }
 
 article {
-  background: var(--eerie-black-2);
-  border: 1px solid var(--jet);
+  background: var(--medium-teal);
+  border: 1px solid var(--dark-blue);
   border-radius: 20px;
   padding: 15px;
   box-shadow: var(--shadow-1);
@@ -157,7 +136,7 @@ article.active {
 .h3,
 .h4,
 .h5 {
-  color: var(--white-2);
+  color: var(--white);
   text-transform: capitalize;
 }
 
@@ -292,11 +271,11 @@ main {
   }
 
   body::-webkit-scrollbar-track {
-    background: var(--smoky-black);
+    background: var(--dark-blue);
   }
 
   body::-webkit-scrollbar-thumb {
-    border: 5px solid var(--smoky-black);
+    border: 5px solid var(--dark-blue);
     background: hsl(0deg 0% 100% / 10%);
     border-radius: 20px;
     box-shadow:

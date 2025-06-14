@@ -46,8 +46,8 @@
 .achievement-item-icon-box {
   --scale: 0.8;
 
-  background: var(--jet);
-  color: var(--orange-yellow-crayola);
+  background: var(--dark-blue);
+  color: var(--burgundy);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -87,7 +87,7 @@
 }
 
 .achievement-title {
-  color: var(--white-2);
+  color: var(--white);
   font-size: var(--fs-5);
   font-weight: var(--fw-400);
   text-transform: capitalize;
@@ -95,7 +95,7 @@
 }
 
 .achievement-category {
-  color: var(--light-gray-70);
+  color: var(--beige);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
 }
@@ -112,7 +112,7 @@
 
 .achievement-post-item > a {
   position: relative;
-  background: var(--border-gradient-onyx);
+  background: var(--medium-teal);
   height: 100%;
   box-shadow: var(--shadow-4);
   border-radius: 16px;
@@ -124,7 +124,7 @@
   position: absolute;
   inset: 1px;
   border-radius: inherit;
-  background: var(--eerie-black-1);
+  background: var(--dark-teal);
   z-index: -1;
 }
 
@@ -159,13 +159,13 @@
 }
 
 .achievement-meta :is(.achievement-category, time) {
-  color: var(--light-gray-70);
+  color: var(--beige);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
 }
 
 .achievement-meta .dot {
-  background: var(--light-gray-70);
+  background: var(--beige);
   width: 4px;
   height: 4px;
   border-radius: 4px;
@@ -178,11 +178,11 @@
 }
 
 .achievement-post-item > a:hover .achievement-item-title {
-  color: var(--orange-yellow-crayola);
+  color: var(--burgundy);
 }
 
 .achievement-text {
-  color: var(--light-gray);
+  color: var(--beige);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;

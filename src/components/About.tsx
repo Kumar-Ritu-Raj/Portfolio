@@ -43,7 +43,7 @@ const About = ({ active }: ActiveProps) => {
                 <FontAwesomeIcon
                   icon={service.icon}
                   size="3x"
-                  style={{ color: 'var(--orange-yellow-crayola)' }}
+                  style={{ color: 'var(--burgundy)' }}
                 />
               </div>
               <div className="service-content-box">
