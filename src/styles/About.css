@@ -123,13 +123,16 @@
 
 .clients-list.has-scrollbar {
   display: flex;
-  place-content: space-around center;
+  justify-content: center;
   align-items: center;
+  gap: 15px;
+  padding-inline: 15px;
 }
 
 .clients-list.has-scrollbar img {
-  width: auto;
-  height: 100%;
+  display: block;
+  max-width: 80%;
+  height: auto;
 }
 
 .clients {
@@ -141,7 +144,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 15px;
-  margin: 0 -15px;
+  margin: 0;
   padding: 25px;
   padding-bottom: 25px;
   overflow-x: auto;
@@ -157,7 +160,9 @@
 }
 
 .clients-item img {
-  width: 80%;
+  display: block;
+  max-width: 80%;
+  width: auto;
   filter: grayscale(1);
   transition: var(--transition-1);
 }

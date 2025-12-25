@@ -125,11 +125,15 @@ const testimonials = [
 const clients = [
   {
     link: 'https://africanancestry.com/',
-    logo: 'https://africanancestry.com/cdn/shop/t/72/assets/logo.svg?v=57037484700392959911672849158',
+    logo: process.env.PUBLIC_URL + '/images/about/african-logo.svg',
   },
   {
     link: 'https://steel-buy.com/',
-    logo: 'https://i0.wp.com/steel-buy.com/wp-content/uploads/2022/12/Steelbuy_Logo.png?w=312&ssl=1',
+    logo: process.env.PUBLIC_URL + '/images/about/steelbuy-logo.svg',
+  },
+  {
+    link: '',
+    logo: process.env.PUBLIC_URL + '/images/about/q_trac.jpeg',
   },
 ];
 

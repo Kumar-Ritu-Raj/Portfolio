@@ -20,8 +20,7 @@ const projectPosts: projectPost[] = [
     date: 'April, 2023',
     excerpt:
       "African Ancestry is a genetic testing service that helps individuals of African descent trace their ancestral roots to specific countries and ethnic groups within Africa. By analyzing DNA samples, the company provides detailed insights into one's lineage, offering a deeper understanding of personal heritage.",
-    image:
-      'https://africanancestry.com/cdn/shop/files/AFA-416_Test_Kit_Product_Image_Family_450x450.png?v=1713454085',
+    image: process.env.PUBLIC_URL + '/images/project/test-kit-logos.png',
     alt: 'African-Ancestry',
   },
   {
@@ -31,8 +30,17 @@ const projectPosts: projectPost[] = [
     date: '2024',
     excerpt:
       'SteelBuy is an online marketplace designed to streamline the buying and selling of metals, particularly steel and aluminum. The platform offers a user-friendly interface that connects buyers and sellers, facilitating efficient and secure transactions.',
-    image:
-      'https://i0.wp.com/steel-buy.com/wp-content/uploads/2023/02/sb-homepage-hero-image.webp?resize=1536%2C941&ssl=1',
+    image: process.env.PUBLIC_URL + '/images/project/steelbuy-image.png',
+    alt: 'Steel-Buy',
+  },
+  {
+    id: 3,
+    title: 'Q-Trac',
+    category: 'Logistics',
+    date: '2025',
+    excerpt:
+      'Q-Trac is a logistics and supply chain management platform that provides businesses with tools to optimize their transportation and delivery processes. The platform offers real-time tracking, route optimization, and analytics to enhance efficiency and reduce costs in logistics operations.',
+    image: process.env.PUBLIC_URL + '/images/about/q_trac.jpeg',
     alt: 'Steel-Buy',
   },
 ];

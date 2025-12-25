@@ -20,7 +20,7 @@ const achievementPosts: achievementPost[] = [
     date: '10 April, 2024',
     excerpt:
       "Work Anniversary is a special occasion that marks the completion of one year of service in a company. It's a time to reflect on achievements, growth, and contributions made during the year.",
-    image: process.env.PUBLIC_URL + '/1stanniversary.png',
+    image: process.env.PUBLIC_URL + '/images/achievement/1stanniversary.png',
     alt: 'Work Anniversary',
   },
   {
@@ -30,8 +30,20 @@ const achievementPosts: achievementPost[] = [
     date: '05 March, 2025',
     excerpt:
       'Big Guns Team Award is a recognition given to SteelBuy Marketplace Dev Team that has demonstrated exceptional performance, collaboration, and success in achieving their goals. It celebrates the collective efforts and accomplishments of the team members.',
-    image: process.env.PUBLIC_URL + '/biggun.png',
+    image: process.env.PUBLIC_URL + '/images/achievement/biggun.png',
     alt: 'Team Award',
+  },
+  {
+    id: 3,
+    title: 'Shoutout Superstar Award',
+    category: 'Superstar Award',
+    date: '11 December, 2025',
+    excerpt:
+      'Shoutout Superstar Award is a recognition given to an individual who has consistently gone above and beyond in their role, demonstrating exceptional skills, dedication, and positive impact on the team and organization.',
+    image:
+      process.env.PUBLIC_URL +
+      '/images/achievement/shoutout-superstar-award.jpg',
+    alt: 'Superstar Award',
   },
 ];
 
