@@ -6,8 +6,8 @@ import {
   faPaperPlane,
   faRobot,
 } from '@fortawesome/free-solid-svg-icons';
-import { knowledgeBase, suggestedQuestions } from '../data/chatbot.ts';
-import type { Message } from '../types/chatbot';
+import { knowledgeBase, suggestedQuestions } from '../data/Chatbot.ts';
+import type { Message } from '../types/Chatbot.ts';
 
 import '../styles/Chatbot.css';
 

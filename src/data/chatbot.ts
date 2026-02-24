@@ -1,4 +1,4 @@
-import { KnowledgeEntry } from '../types/chatbot';
+import { KnowledgeEntry } from '../types/Chatbot';
 
 export const knowledgeBase: KnowledgeEntry[] = [
   {
