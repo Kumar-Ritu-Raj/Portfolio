@@ -33,12 +33,12 @@ const knowledgeBase: KnowledgeEntry[] = [
       'howdy',
     ],
     response:
-      "Hi there! 👋 I'm Kumar's portfolio assistant. Ask me anything about Kumar Ritu Raj — his skills, projects, experience, education, certifications, or how to get in touch!",
+      "Hi there! 👋 I'm Kumar's assistant. Ask me anything about Kumar Ritu Raj — his skills, projects, experience, education, certifications, or how to get in touch!",
   },
   {
     keywords: ['who are you', 'what are you', 'bot', 'assistant'],
     response:
-      "I'm a smart portfolio assistant for Kumar Ritu Raj. 🤖 I can answer questions about his background, skills, projects, work experience, education, and more!",
+      "I'm a smart assistant for Kumar Ritu Raj. 🤖 I can answer questions about his background, skills, projects, work experience, education, and more!",
   },
   {
     keywords: [
@@ -315,7 +315,7 @@ const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Hi! 👋 I'm Kumar's portfolio assistant. Ask me anything about Kumar Ritu Raj — his skills, projects, experience, or how to get in touch!",
+      text: "Hi! 👋 I'm Kumar's assistant. Ask me anything about Kumar Ritu Raj — his skills, projects, experience, or how to get in touch!",
       sender: 'bot',
     },
   ]);
@@ -377,7 +377,7 @@ const Chatbot: React.FC = () => {
                 <span className="chatbot-online-dot" aria-label="Online"></span>
               </div>
               <div>
-                <p className="chatbot-name">Portfolio Assistant</p>
+                <p className="chatbot-name">Kumar Ritu Raj Assistant</p>
                 <p className="chatbot-status">
                   <span className="chatbot-status-dot"></span> Online
                 </p>
