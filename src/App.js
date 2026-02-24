@@ -1,5 +1,6 @@
 import Sidebar from './components/Sidebar.tsx';
 import Navbar from './components/Navbar.tsx';
+import Chatbot from './components/Chatbot.tsx';
 import './App.css';
 import './style.css';
 
@@ -18,6 +19,7 @@ function App() {
       <div className="main-content">
         <Navbar />
       </div>
+      <Chatbot />
     </main>
   );
 }
