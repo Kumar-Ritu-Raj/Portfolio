@@ -5,6 +5,7 @@ import {
   faEnvelope,
   faCalendar,
   faMapMarkerAlt,
+  faChessKnight,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebook,
@@ -149,6 +150,16 @@ const Sidebar = () => {
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faInstagram} />
+              </a>
+            </li>
+            <li className="social-item">
+              <a
+                href="https://www.chess.com/member/KumarRituRaj17"
+                className="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faChessKnight} />
               </a>
             </li>
           </ul>
