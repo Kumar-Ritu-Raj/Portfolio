@@ -34,6 +34,24 @@
   line-height: 1.6;
 }
 
+.timeline-company {
+  display: block;
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  margin-bottom: 2px;
+}
+
+.timeline-period {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.timeline-marks {
+  color: var(--vegas-gold) !important;
+  font-weight: var(--fw-400) !important;
+}
+
 .timeline-item:not(:last-child)::before {
   content: '';
   position: absolute;
@@ -114,6 +132,8 @@
   background: var(--text-gradient-yellow);
   height: 100%;
   border-radius: inherit;
+  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 0 10px var(--accent-glow);
 }
 
 .skills-title {

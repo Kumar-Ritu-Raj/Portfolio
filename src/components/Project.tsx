@@ -6,6 +6,7 @@ interface projectPost {
   id: number;
   title: string;
   category: string;
+  categoryClass: string;
   date: string;
   excerpt: string;
   image: string;
@@ -17,9 +18,10 @@ const projectPosts: projectPost[] = [
     id: 1,
     title: 'African-Ancestry',
     category: 'E-Commerce',
+    categoryClass: 'badge-cyan',
     date: 'April, 2023',
     excerpt:
-      "African Ancestry is a genetic testing service that helps individuals of African descent trace their ancestral roots to specific countries and ethnic groups within Africa. By analyzing DNA samples, the company provides detailed insights into one's lineage, offering a deeper understanding of personal heritage.",
+      "A genetic testing platform helping individuals of African descent trace their ancestral roots to specific countries and ethnic groups within Africa.",
     image: process.env.PUBLIC_URL + '/images/project/test-kit-logos.png',
     alt: 'African-Ancestry',
   },
@@ -27,9 +29,10 @@ const projectPosts: projectPost[] = [
     id: 2,
     title: 'Steel-Buy',
     category: 'Market Place',
+    categoryClass: 'badge-violet',
     date: '2024',
     excerpt:
-      'SteelBuy is an online marketplace designed to streamline the buying and selling of metals, particularly steel and aluminum. The platform offers a user-friendly interface that connects buyers and sellers, facilitating efficient and secure transactions.',
+      'An online marketplace connecting buyers and sellers of steel and aluminum with a secure, user-friendly trading experience.',
     image: process.env.PUBLIC_URL + '/images/project/steelbuy-image.png',
     alt: 'Steel-Buy',
   },
@@ -37,11 +40,12 @@ const projectPosts: projectPost[] = [
     id: 3,
     title: 'Q-Trac',
     category: 'Logistics',
+    categoryClass: 'badge-emerald',
     date: '2025',
     excerpt:
-      'Q-Trac is a logistics and supply chain management platform that provides businesses with tools to optimize their transportation and delivery processes. The platform offers real-time tracking, route optimization, and analytics to enhance efficiency and reduce costs in logistics operations.',
+      'A logistics platform with real-time tracking, route optimization, and analytics to streamline supply chain operations.',
     image: process.env.PUBLIC_URL + '/images/about/q_trac.jpeg',
-    alt: 'Steel-Buy',
+    alt: 'Q-Trac',
   },
 ];
 
@@ -52,22 +56,29 @@ const Project = ({ active }: ActiveProps) => {
       data-page="project"
     >
       <header>
-        <h2 className="h2 article-title">project</h2>
+        <p className="section-label">Portfolio</p>
+        <h2 className="h2 article-title">Projects</h2>
       </header>
+
+      <p className="page-intro">
+        Production-grade applications built with React, delivering real business
+        impact across e-commerce, marketplace, and logistics domains.
+      </p>
 
       <section className="project-posts">
         <ul className="project-posts-list">
           {projectPosts.map((post) => (
             <li key={post.id} className="project-post-item">
-              <button className="project-item-button">
+              <div className="project-card">
                 <figure className="project-banner-box">
                   <img src={post.image} alt={post.alt} loading="lazy" />
+                  <span className={`badge-tag project-badge ${post.categoryClass}`}>
+                    {post.category}
+                  </span>
                 </figure>
 
                 <div className="project-content">
                   <div className="project-meta">
-                    <p className="project-category">{post.category}</p>
-                    <span className="dot"></span>
                     <time dateTime={post.date}>{post.date}</time>
                   </div>
 
@@ -75,7 +86,7 @@ const Project = ({ active }: ActiveProps) => {
 
                   <p className="project-text">{post.excerpt}</p>
                 </div>
-              </button>
+              </div>
             </li>
           ))}
         </ul>

@@ -1,26 +1,21 @@
-import Sidebar from './components/Sidebar.tsx';
 import Navbar from './components/Navbar.tsx';
 import Chatbot from './components/Chatbot.tsx';
+import BackgroundEffects from './components/BackgroundEffects.tsx';
+import ScrollProgress from './components/ScrollProgress.tsx';
 import './App.css';
 import './style.css';
+import './styles/Shared.css';
 
 function App() {
   return (
-    <main>
-      <header className="App-header">
-        <meta
-          name="description"
-          content="Professional portfolio showcasing my skills, projects, and experience"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>My Portfolio</title>
-      </header>
-      <Sidebar />
-      <div className="main-content">
+    <>
+      <BackgroundEffects />
+      <ScrollProgress />
+      <main className="app-main">
         <Navbar />
-      </div>
-      <Chatbot />
-    </main>
+        <Chatbot />
+      </main>
+    </>
   );
 }
 

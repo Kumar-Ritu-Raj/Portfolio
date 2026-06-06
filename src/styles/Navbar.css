@@ -1,76 +1,210 @@
+.dashboard-top {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+}
+
 .navbar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  background: hsl(240deg 1% 17% / 75%);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--jet);
-  border-radius: 12px 12px 0 0;
-  box-shadow: var(--shadow-2);
-  z-index: 500;
+  z-index: 2;
 }
 
 .navbar-list {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 0 10px;
+  gap: 4px;
+  padding: 4px;
+  background: hsl(222deg 47% 7% / 60%);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+}
+
+.navbar-indicator {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: calc(100% - 8px);
+  background: var(--accent-surface);
+  border: 1px solid var(--accent-border);
+  border-radius: 10px;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 0;
+  box-shadow: 0 0 20px var(--accent-glow);
 }
 
 .navbar-link {
-  color: var(--light-gray);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  color: var(--light-gray-70);
   font-size: var(--fs-8);
-  padding: 20px 7px;
+  padding: 10px 14px;
+  border-radius: 10px;
   transition: color var(--transition-1);
+  white-space: nowrap;
+}
+
+.navbar-icon {
+  font-size: 14px;
+  transition: transform var(--transition-1);
+}
+
+.navbar-label {
+  font-size: 12px;
+  font-weight: var(--fw-500);
+  letter-spacing: 0.02em;
 }
 
 .navbar-link:hover,
 .navbar-link:focus {
-  color: var(--light-gray-70);
+  color: var(--light-gray);
+}
+
+.navbar-link:hover .navbar-icon,
+.navbar-link.active .navbar-icon {
+  transform: scale(1.1);
 }
 
 .navbar-link.active {
-  color: var(--orange-yellow-crayola);
+  color: var(--accent-primary);
 }
 
-@media (width >= 580px) {
+.navbar-link.active .navbar-label {
+  font-weight: var(--fw-600);
+}
+
+/* Mobile: brand hidden, nav fixed at viewport bottom */
+@media (width < 1024px) {
+  .dashboard-top {
+    margin-bottom: 0;
+    height: 0;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  .dashboard-brand {
+    display: none;
+  }
+
   .navbar {
+    pointer-events: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 6px 8px calc(8px + env(safe-area-inset-bottom, 0px));
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-top: 1px solid var(--glass-border);
     border-radius: 20px 20px 0 0;
+    box-shadow: 0 -10px 40px hsl(222deg 47% 4% / 50%);
+    z-index: 500;
   }
 
   .navbar-list {
-    gap: 20px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 2px;
   }
 
   .navbar-link {
-    --fs-8: 14px;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 8px;
+    min-width: 52px;
+  }
+
+  .navbar-label {
+    font-size: 9px;
+  }
+
+  .navbar-indicator {
+    top: auto;
+    bottom: 0;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    border: none;
+    background: var(--accent-gradient);
+    box-shadow: 0 0 12px var(--accent-glow);
   }
 }
 
-@media (width >= 768px) {
+@media (width >= 580px) and (width < 1024px) {
   .navbar-link {
-    --fs-8: 15px;
+    padding: 12px 14px;
+    min-width: 64px;
+  }
+
+  .navbar-label {
+    font-size: 11px;
+  }
+}
+
+@media (width < 380px) {
+  .navbar-label {
+    display: none;
+  }
+
+  .navbar-link {
+    min-width: 44px;
+    padding: 10px 6px;
+  }
+
+  .navbar-icon {
+    font-size: 18px;
   }
 }
 
 @media (width >= 1024px) {
+  .dashboard-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+    padding: 20px 28px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 22px;
+    box-shadow: var(--shadow-2);
+  }
+
+  .dashboard-brand {
+    flex-shrink: 0;
+  }
+
   .navbar {
-    position: absolute;
-    inset: 0 0 auto auto;
-    width: max-content;
-    border-radius: 0 20px;
-    padding: 0 20px;
-    box-shadow: none;
+    flex: 1;
+    max-width: 720px;
+    width: auto;
   }
 
   .navbar-list {
-    gap: 30px;
-    padding: 0 20px;
+    justify-content: flex-end;
+    gap: 6px;
+    padding: 5px;
   }
 
   .navbar-link {
-    font-weight: var(--fw-500);
+    padding: 10px 16px;
+  }
+
+  .navbar-label {
+    font-size: 13px;
   }
 }

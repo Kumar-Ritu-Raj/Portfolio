@@ -32,7 +32,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
       'ritu',
     ],
     response:
-      'Kumar Ritu Raj is a passionate React Developer based in Pune, India. 🚀 He specializes in building modern, scalable, and user-friendly web applications. He currently works at Parkar Digital and is also a Project Manager at Mozilla Localization.',
+      'Kumar Ritu Raj is a passionate React Developer based in Pune, India with 3+ years of experience. 🚀 He specializes in building modern, scalable web applications. He has been at Parkar Digital since 10 April 2023 and is also a Project Manager at Mozilla Localization.',
   },
   {
     keywords: [
@@ -152,12 +152,12 @@ export const knowledgeBase: KnowledgeEntry[] = [
       'worked',
     ],
     response:
-      "Kumar's work experience:\n\n💼 Front-End Developer @ Parkar Digital\n   April 2023 – Present\n   → Worked on Atkco & Steel-Buy as a React Developer.\n\n🌐 Project Manager – Localization @ Mozilla\n   February 2018 – Present\n   → Manages the Angika language on pontoon.mozilla.org.",
+      "Kumar's work experience:\n\n💼 Front-End Developer @ Parkar Digital\n   10 April 2023 – Present (3+ years)\n   → Built African-Ancestry, Steel-Buy & Q-Trac as a React Developer.\n\n🌐 Project Manager – Localization @ Mozilla\n   February 2018 – Present\n   → Manages the Angika language on pontoon.mozilla.org.",
   },
   {
     keywords: ['parkar', 'parkar digital'],
     response:
-      'Kumar has been working as a Front-End Developer at Parkar Digital since April 2023. He has worked on two major projects — Atkco and Steel-Buy — as a React Developer. 💼',
+      'Kumar has been working as a Front-End Developer at Parkar Digital since 10 April 2023 — over 3 years of experience. He has built African-Ancestry, Steel-Buy, and Q-Trac as a React Developer. 💼',
   },
   {
     keywords: ['mozilla', 'localization', 'angika', 'pontoon'],
@@ -233,7 +233,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
       'reward',
     ],
     response:
-      "Kumar's achievements:\n\n🏆 Work Anniversary (April 2024)\n   Marked 1 year of service at Parkar Digital.\n\n🏆 Big Guns Team Award (March 2025)\n   Given to the SteelBuy Dev Team for exceptional performance.\n\n🏆 Shoutout Superstar Award (December 2025)\n   Individual recognition for outstanding dedication & impact.",
+      "Kumar's achievements:\n\n🏆 1st Work Anniversary (April 2024)\n   Marked 1 year of service at Parkar Digital.\n\n🏆 Big Guns Team Award (March 2025)\n   Given to the SteelBuy Dev Team for exceptional performance.\n\n🏆 Shoutout Superstar Award (December 2025)\n   Individual recognition for outstanding dedication & impact.",
   },
   {
     keywords: [

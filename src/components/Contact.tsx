@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import {
+  faPaperPlane,
+  faSpinner,
+  faEnvelope,
+  faPhone,
+  faLocationDot,
+} from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { ActiveProps } from './Navbar';
 import emailjs from '@emailjs/browser';
 import '../styles/Contact.css';
@@ -105,8 +112,41 @@ const Contact = ({ active }: ActiveProps) => {
       data-page="contact"
     >
       <header>
+        <p className="section-label">Get in Touch</p>
         <h2 className="h2 article-title">Contact</h2>
       </header>
+
+      <ul className="contact-quick-links">
+        <li>
+          <a href="mailto:kumarrituraj2000@gmail.com" className="quick-link-card">
+            <FontAwesomeIcon icon={faEnvelope} />
+            <span>Email</span>
+          </a>
+        </li>
+        <li>
+          <a href="tel:+918935802137" className="quick-link-card">
+            <FontAwesomeIcon icon={faPhone} />
+            <span>Call</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/kumar-ritu-raj/"
+            className="quick-link-card"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+            <span>LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <div className="quick-link-card quick-link-static">
+            <FontAwesomeIcon icon={faLocationDot} />
+            <span>Pune, IN</span>
+          </div>
+        </li>
+      </ul>
 
       <section className="mapbox" data-mapbox>
         <figure>

@@ -6,6 +6,7 @@ interface achievementPost {
   id: number;
   title: string;
   category: string;
+  categoryClass: string;
   date: string;
   excerpt: string;
   image: string;
@@ -15,11 +16,12 @@ interface achievementPost {
 const achievementPosts: achievementPost[] = [
   {
     id: 1,
-    title: 'Work Anniversary',
+    title: '1st Work Anniversary',
     category: 'Anniversary',
+    categoryClass: 'badge-cyan',
     date: '10 April, 2024',
     excerpt:
-      "Work Anniversary is a special occasion that marks the completion of one year of service in a company. It's a time to reflect on achievements, growth, and contributions made during the year.",
+      'Celebrated one year at Parkar Digital, reflecting on growth, contributions, and milestones delivered across client projects.',
     image: process.env.PUBLIC_URL + '/images/achievement/1stanniversary.png',
     alt: 'Work Anniversary',
   },
@@ -27,19 +29,21 @@ const achievementPosts: achievementPost[] = [
     id: 2,
     title: 'Big Guns Team Award',
     category: 'Team Award',
+    categoryClass: 'badge-violet',
     date: '05 March, 2025',
     excerpt:
-      'Big Guns Team Award is a recognition given to SteelBuy Marketplace Dev Team that has demonstrated exceptional performance, collaboration, and success in achieving their goals. It celebrates the collective efforts and accomplishments of the team members.',
+      'Awarded to the SteelBuy Marketplace Dev Team for exceptional performance, collaboration, and successful project delivery.',
     image: process.env.PUBLIC_URL + '/images/achievement/biggun.png',
     alt: 'Team Award',
   },
   {
     id: 3,
     title: 'Shoutout Superstar Award',
-    category: 'Superstar Award',
+    category: 'Individual',
+    categoryClass: 'badge-gold',
     date: '11 December, 2025',
     excerpt:
-      'Shoutout Superstar Award is a recognition given to an individual who has consistently gone above and beyond in their role, demonstrating exceptional skills, dedication, and positive impact on the team and organization.',
+      'Individual recognition for consistently going above and beyond — exceptional skills, dedication, and positive team impact.',
     image:
       process.env.PUBLIC_URL +
       '/images/achievement/shoutout-superstar-award.jpg',
@@ -47,29 +51,38 @@ const achievementPosts: achievementPost[] = [
   },
 ];
 
-const achievement = ({ active }: ActiveProps) => {
+const Achievement = ({ active }: ActiveProps) => {
   return (
     <article
       className={active ? 'achievement active' : 'achievement'}
       data-page="achievement"
     >
       <header>
-        <h2 className="h2 article-title">achievement</h2>
+        <p className="section-label">Recognition</p>
+        <h2 className="h2 article-title">Achievements</h2>
       </header>
+
+      <p className="page-intro">
+        Awards and milestones earned through consistent delivery, teamwork, and
+        dedication at Parkar Digital.
+      </p>
 
       <section className="achievement-posts">
         <ul className="achievement-posts-list">
           {achievementPosts.map((post) => (
             <li key={post.id} className="achievement-post-item">
-              <button className="achievement-item-button">
+              <div className="achievement-card">
                 <figure className="achievement-banner-box">
                   <img src={post.image} alt={post.alt} loading="lazy" />
+                  <span
+                    className={`badge-tag achievement-badge ${post.categoryClass}`}
+                  >
+                    {post.category}
+                  </span>
                 </figure>
 
                 <div className="achievement-content">
                   <div className="achievement-meta">
-                    <p className="achievement-category">{post.category}</p>
-                    <span className="dot"></span>
                     <time dateTime={post.date}>{post.date}</time>
                   </div>
 
@@ -77,7 +90,7 @@ const achievement = ({ active }: ActiveProps) => {
 
                   <p className="achievement-text">{post.excerpt}</p>
                 </div>
-              </button>
+              </div>
             </li>
           ))}
         </ul>
@@ -86,4 +99,4 @@ const achievement = ({ active }: ActiveProps) => {
   );
 };
 
-export default achievement;
+export default Achievement;

@@ -6,6 +6,7 @@ import {
   faCalendar,
   faMapMarkerAlt,
   faChessKnight,
+  faCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebook,
@@ -16,17 +17,50 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import '../styles/Sidebar.css';
 
+const socialLinks = [
+  {
+    href: 'https://www.linkedin.com/in/kumar-ritu-raj/',
+    icon: faLinkedin,
+    label: 'LinkedIn',
+  },
+  {
+    href: 'https://github.com/Kumar-Ritu-Raj',
+    icon: faGithub,
+    label: 'GitHub',
+  },
+  {
+    href: 'https://x.com/KumarRituRaj17',
+    icon: faTwitter,
+    label: 'Twitter',
+  },
+  {
+    href: 'https://www.facebook.com/profile.php?id=100005316888830',
+    icon: faFacebook,
+    label: 'Facebook',
+  },
+  {
+    href: 'https://www.instagram.com/kumarrituraj17/',
+    icon: faInstagram,
+    label: 'Instagram',
+  },
+  {
+    href: 'https://www.chess.com/member/KumarRituRaj17',
+    icon: faChessKnight,
+    label: 'Chess.com',
+  },
+];
+
 const Sidebar = () => {
   const [showContacts, setShowContacts] = useState(true);
 
-  const toggleContacts = () => {
-    setShowContacts((prev) => !prev);
-  };
-
   return (
-    <aside className={showContacts ? 'sidebar active' : 'sidebar'} data-sidebar>
+    <aside
+      className={showContacts ? 'sidebar active' : 'sidebar'}
+      data-sidebar
+    >
       <div className="sidebar-info">
         <figure className="avatar-box" id="profile-pic">
+          <div className="avatar-ring" />
           <img
             src={process.env.PUBLIC_URL + '/kumar.jpg'}
             alt="Kumar Ritu Raj"
@@ -38,17 +72,25 @@ const Sidebar = () => {
           <h1 className="name" title="Kumar Ritu Raj">
             Kumar Ritu Raj
           </h1>
-          <p className="title">Front-End Developer</p>
+          <p className="title">Frontend Developer</p>
+          <p className="availability">
+            <FontAwesomeIcon icon={faCircle} className="availability-dot" />
+            Available for opportunities
+          </p>
         </div>
 
-        <button className="info_more-btn" onClick={toggleContacts}>
+        <button
+          className="info_more-btn"
+          onClick={() => setShowContacts((prev) => !prev)}
+          aria-expanded={showContacts}
+        >
           <span>{showContacts ? 'Hide Contacts' : 'Show Contacts'}</span>
         </button>
       </div>
 
       {showContacts && (
         <div className="sidebar-info_more">
-          <div className="separator"></div>
+          <div className="separator" />
 
           <ul className="contacts-list">
             <li className="contact-item">
@@ -99,69 +141,22 @@ const Sidebar = () => {
             </li>
           </ul>
 
-          <div className="separator"></div>
+          <div className="separator" />
 
           <ul className="social-list">
-            <li className="social-item">
-              <a
-                href="https://www.linkedin.com/in/kumar-ritu-raj/"
-                className="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
-            </li>
-            <li className="social-item">
-              <a
-                href="https://github.com/Kumar-Ritu-Raj"
-                className="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-            </li>
-            <li className="social-item">
-              <a
-                href="https://x.com/KumarRituRaj17"
-                className="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-            </li>
-            <li className="social-item">
-              <a
-                href="https://www.facebook.com/profile.php?id=100005316888830"
-                className="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faFacebook} />
-              </a>
-            </li>
-            <li className="social-item">
-              <a
-                href="https://www.instagram.com/kumarrituraj17/"
-                className="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-            </li>
-            <li className="social-item">
-              <a
-                href="https://www.chess.com/member/KumarRituRaj17"
-                className="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faChessKnight} />
-              </a>
-            </li>
+            {socialLinks.map((social) => (
+              <li className="social-item" key={social.label}>
+                <a
+                  href={social.href}
+                  className="social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                >
+                  <FontAwesomeIcon icon={social.icon} />
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       )}

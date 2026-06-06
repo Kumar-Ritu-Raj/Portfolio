@@ -1,0 +1,43 @@
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: var(--fw-600);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.badge-cyan {
+  color: var(--accent-primary);
+  background: hsl(187deg 85% 53% / 12%);
+  border: 1px solid hsl(187deg 85% 53% / 25%);
+}
+
+.badge-violet {
+  color: var(--accent-secondary);
+  background: hsl(258deg 90% 66% / 12%);
+  border: 1px solid hsl(258deg 90% 66% / 25%);
+}
+
+.badge-emerald {
+  color: var(--accent-tertiary);
+  background: hsl(160deg 60% 45% / 12%);
+  border: 1px solid hsl(160deg 60% 45% / 25%);
+}
+
+.badge-gold {
+  color: #fbbf24;
+  background: hsl(45deg 90% 55% / 12%);
+  border: 1px solid hsl(45deg 90% 55% / 25%);
+}
+
+.page-intro {
+  color: var(--light-gray-70);
+  font-size: var(--fs-6);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  padding-left: 12px;
+  border-left: 3px solid var(--accent-primary);
+}

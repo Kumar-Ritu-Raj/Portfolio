@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ActiveProps } from './Navbar';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -66,10 +66,10 @@ export const resumeData: ResumeData = {
     {
       position: 'Front-End Developer',
       company: 'Parkar Digital',
-      startYear: 'April 2023',
+      startYear: '10 April 2023',
       endYear: 'Present',
       description:
-        'Work on two projects Atkco and Steel-Buy in Parkar Digital as a React Developer.',
+        'Building production React applications including African-Ancestry, Steel-Buy, and Q-Trac. Focused on scalable UI architecture, performance, and clean component design.',
     },
     {
       position: 'Project Manager in Localization',
@@ -91,12 +91,41 @@ export const resumeData: ResumeData = {
 
 const Resume = ({ active }: ActiveProps) => {
   const { education, experience, skills } = resumeData;
+  const skillsRef = useRef<HTMLElement>(null);
+  const [animateSkills, setAnimateSkills] = useState(false);
+
+  useEffect(() => {
+    if (!active) {
+      setAnimateSkills(false);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAnimateSkills(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (skillsRef.current) observer.observe(skillsRef.current);
+    return () => observer.disconnect();
+  }, [active]);
 
   return (
     <article className={active ? 'resume active' : 'resume'} data-page="resume">
       <header>
+        <p className="section-label">Career</p>
         <h2 className="h2 article-title">Resume</h2>
       </header>
+
+      <p className="page-intro">
+        3+ years of frontend development experience building scalable React
+        applications for global clients since joining Parkar Digital in April
+        2023.
+      </p>
 
       <section className="timeline">
         <div className="title-wrapper">
@@ -110,7 +139,8 @@ const Resume = ({ active }: ActiveProps) => {
           {experience.map((item, index) => (
             <li key={index} className="timeline-item">
               <h4 className="h4 timeline-item-title">{item.position}</h4>
-              <span>
+              <span className="timeline-company">{item.company}</span>
+              <span className="timeline-period">
                 {item.startYear} — {item.endYear}
               </span>
               <p className="timeline-text">{item.description}</p>
@@ -131,17 +161,17 @@ const Resume = ({ active }: ActiveProps) => {
           {education.map((item, index) => (
             <li key={index} className="timeline-item">
               <h4 className="h4 timeline-item-title">{item.school}</h4>
-              <span>
+              <span className="timeline-period">
                 {item.startYear} — {item.endYear}
               </span>
               <p className="timeline-text">{item.description}</p>
-              <p className="timeline-text">{item.marks}</p>
+              <p className="timeline-text timeline-marks">{item.marks}</p>
             </li>
           ))}
         </ol>
       </section>
 
-      <section className="skill">
+      <section className="skill" ref={skillsRef}>
         <h3 className="h3 skills-title">My Skills</h3>
         <ul className="skills-list content-card">
           {skills.map((skill, index) => (
@@ -153,8 +183,11 @@ const Resume = ({ active }: ActiveProps) => {
               <div className="skill-progress-bg">
                 <div
                   className="skill-progress-fill"
-                  style={{ width: `${skill.percentage}%` }}
-                ></div>
+                  style={{
+                    width: animateSkills ? `${skill.percentage}%` : '0%',
+                    transitionDelay: `${index * 0.1}s`,
+                  }}
+                />
               </div>
             </li>
           ))}

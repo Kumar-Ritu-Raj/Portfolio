@@ -1,21 +1,58 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaptop, faCode } from '@fortawesome/free-solid-svg-icons';
+import {
+  faLaptop,
+  faCode,
+  faBriefcase,
+  faFolderOpen,
+  faAward,
+} from '@fortawesome/free-solid-svg-icons';
 import { ActiveProps } from './Navbar';
 import '../styles/About.css';
 
 interface Service {
-  icon: any;
+  icon: typeof faLaptop;
   title: string;
   description: string;
+}
+
+interface Stat {
+  icon: typeof faBriefcase;
+  value: string;
+  label: string;
 }
 
 const About = ({ active }: ActiveProps) => {
   return (
     <article className={active ? 'about active' : 'about'} data-page="about">
       <header>
-        <h2 className="h2 article-title">About me</h2>
+        <p className="section-label">Introduction</p>
+        <h2 className="h2 article-title">About Me</h2>
       </header>
+
+      <div className="about-top">
+        <section className="about-hero">
+          <p className="about-hero-text">
+            Building{' '}
+            <span className="gradient-text">scalable web experiences</span>{' '}
+            with React &amp; TypeScript
+          </p>
+          <p className="about-hero-sub">
+            Front-End Developer at Parkar Digital since 10 April 2023 · Pune,
+            India
+          </p>
+        </section>
+
+        <section className="stats-grid">
+          {stats.map((stat) => (
+            <div className="stat-card glass-card" key={stat.label}>
+              <FontAwesomeIcon icon={stat.icon} className="stat-icon" />
+              <span className="stat-value">{stat.value}</span>
+              <span className="stat-label">{stat.label}</span>
+            </div>
+          ))}
+        </section>
+      </div>
 
       <section className="about-text">
         <p>
@@ -29,21 +66,31 @@ const About = ({ active }: ActiveProps) => {
           building responsive and dynamic interfaces that provide a smooth user
           experience. My goal is to deliver solutions that not only meet
           business needs but also exceed expectations through clean code and
-          innovative design. I take pride in collaborating with teams to bring
-          ideas to life and drive impactful results with React.
+          innovative design.
         </p>
       </section>
 
+      <section className="tech-stack">
+        <h3 className="h3 tech-stack-title">Tech Stack</h3>
+        <ul className="tech-pills">
+          {techStack.map((tech) => (
+            <li className="tech-pill" key={tech}>
+              {tech}
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section className="service">
-        <h3 className="h3 service-title">What I'm doing</h3>
+        <h3 className="h3 service-title">What I'm Doing</h3>
         <ul className="service-list">
           {services.map((service) => (
-            <li className="service-item" key={service.title}>
+            <li className="service-item glass-card" key={service.title}>
               <div className="service-icon-box">
                 <FontAwesomeIcon
                   icon={service.icon}
-                  size="3x"
-                  style={{ color: 'var(--orange-yellow-crayola)' }}
+                  size="2x"
+                  className="service-icon"
                 />
               </div>
               <div className="service-content-box">
@@ -89,7 +136,7 @@ const About = ({ active }: ActiveProps) => {
         <ul className="clients-list has-scrollbar">
           {clients.map((client, index) => (
             <li className="clients-item" key={index}>
-              <a href={client.link}>
+              <a href={client.link} target="_blank" rel="noopener noreferrer">
                 <img src={client.logo} alt="client logo" />
               </a>
             </li>
@@ -100,17 +147,36 @@ const About = ({ active }: ActiveProps) => {
   );
 };
 
+const stats: Stat[] = [
+  { icon: faBriefcase, value: '3+', label: 'Years Experience' },
+  { icon: faFolderOpen, value: '3+', label: 'Projects Delivered' },
+  { icon: faAward, value: '10+', label: 'Certifications' },
+];
+
+const techStack = [
+  'React.js',
+  'Next.js',
+  'TypeScript',
+  'JavaScript',
+  'HTML & MJML',
+  'CSS & SCSS',
+  'Tailwind CSS',
+  'Jest',
+  'Git',
+];
+
 const services: Service[] = [
   {
     icon: faLaptop,
-    title: 'Web design',
+    title: 'UI/UX Development',
     description:
-      'The most modern and high-quality design made at a professional level.',
+      'Crafting responsive, accessible interfaces with modern design systems and pixel-perfect implementation.',
   },
   {
     icon: faCode,
-    title: 'Web development',
-    description: 'High-quality development of sites at a professional level.',
+    title: 'Frontend Engineering',
+    description:
+      'Building performant, maintainable React applications with clean architecture and best practices.',
   },
 ];
 
