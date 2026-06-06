@@ -38,6 +38,12 @@
   gap: 14px;
 }
 
+@media (width <= 1024px) {
+  .dashboard-brand {
+    display: none;
+  }
+}
+
 .brand-icon {
   width: 44px;
   height: 44px;
